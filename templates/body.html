@@ -1,0 +1,40 @@
+{% extends 'base.html' %}  <!-- extends no lleva cierre -->
+{% block body %}
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+    <!-- nabvar -->
+        {% include 'navbar.html' %}
+
+    <!-- Main Sidebar -->
+        {% include 'sidebar.html' %}
+        <div class="content-wrapper"></div>
+
+    <!-- Content Wrapper. Contains page content -->
+            {% include 'content_wrapper.html' %}
+
+        <!-- main-content -->
+            {% block main-content %}
+            {% endblock %}
+
+        </div>
+    <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+            {% include 'control_sidebar.html' %}
+        <!-- /.control-sidebar -->
+
+        <!-- Main Footer -->
+            {% include 'footer.html' %}
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+
+    {% block scripts %}
+
+    {% endblock %}
+</body>
+
+{% endblock %}
+
+
