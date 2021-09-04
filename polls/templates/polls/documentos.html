@@ -1,0 +1,24 @@
+{% extends 'main_content.html' %}
+{%  block content %}
+<h1>Documentos</h1>
+<table class="table" id="data">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Fecha Cargo</th>
+            <th scope="col">Cliente</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for documento in lista_documentos %}
+        <tr>
+            <th scope="row">{{documento.id}}</th>
+            <td>{{documento.amount}}</td>
+            <td>{{documento.charged_datetime}}</td>
+            <td>{{documento.client}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

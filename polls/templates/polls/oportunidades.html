@@ -1,0 +1,28 @@
+{% extends 'main_content.html' %}
+{%  block content %}
+<h1>Oportunidades</h1>
+<table class="table" id="data">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Fecha Registro</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Sitio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for oportunidad in lista_oportunidades %}
+        <tr>
+            <th scope="row">{{oportunidad.id}}</th>
+            <td>{{oportunidad.first_name}}</td>
+            <td>{{oportunidad.last_name}}</td>
+            <td>{{oportunidad.registered_datetime}}</td>
+            <td>{{oportunidad.email}}</td>
+            <td>{{oportunidad.site}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

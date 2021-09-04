@@ -7,7 +7,7 @@
 
     <!-- Main Sidebar -->
         {% include 'sidebar.html' %}
-        <div class="content-wrapper"></div>
+        <div class="content-wrapper">
 
     <!-- Content Wrapper. Contains page content -->
             {% include 'content_wrapper.html' %}
@@ -30,9 +30,19 @@
 
     <!-- REQUIRED SCRIPTS -->
 
+    
     {% block scripts %}
-
+    <!-- jQuery -->
+        <script type="application/javascript">
+        $(function () {
+            $('#data').DataTable({
+                responsive: true,
+                autoWidth: false
+            });
+        });
+        </script>
     {% endblock %}
+
 </body>
 
 {% endblock %}

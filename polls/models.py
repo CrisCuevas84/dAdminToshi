@@ -9,6 +9,9 @@ class Client(models.Model):
     email = models.CharField(max_length=50)
     joined_datetime = models.DateTimeField()
 
+    def __str__(self):   # para mostrar el nombre en admin     
+        return self.first_name + ' ' + self.last_name
+
     class Meta:
         managed = False
         db_table = 'clients'
@@ -20,13 +23,17 @@ class Site(models.Model):
     created_datetime = models.DateTimeField()
     client=models.ForeignKey(Client, related_name="sites",on_delete=models.CASCADE) #client_id = models.IntegerField()
 
+    def __str__(self):
+        return self.domain_name
+
+
     class Meta:
         managed = False
         db_table = 'sites'
 
 
 class Lead(models.Model):
-    id = models.AutoField(db_column='lead_id',primary_key=True)
+    id = models.AutoField(db_column='leads_id',primary_key=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     registered_datetime = models.DateTimeField()
